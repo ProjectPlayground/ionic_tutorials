@@ -7,19 +7,9 @@
         var vm = this;
 
         vm.teamId = Number($stateParams.id);
-        console.log(vm.teamId);
-
         var data = eliteApi.getLeagueData();
-        console.log(data);
 
-        console.log(_.chain(data.teams).flatten("divisionTeams").value());
-
-        var team = _.chain(data.teams)
-                    .flatten("divisionTeams")
-                    .find({ "id": vm.teamId })
-                    .value();
-        
-        vm.teamName = team.name;
+        vm.teamName = "PICHORRA";
 
         vm.games = _.chain(data.games)
                     .filter(isTeamInGame)
