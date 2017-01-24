@@ -1,6 +1,6 @@
-angular.module("eliteApp", ['ionic'])
+angular.module("eliteApp", ["ionic", "angular-cache", "uiGmapgoogle-maps"])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, CacheFactory) {
     $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar ab
         // for form inputs)
@@ -10,6 +10,11 @@ angular.module("eliteApp", ['ionic'])
         if (window.StatusBar) {
             StatusBar.styleDefault();
         }
+
+        CacheFactory.createCache('leagueDataCache', { storageMode: 'localStorage', maxAge: 10000, deleteOnExpire: 'aggressive' });
+        CacheFactory.createCache('leaguesCache', { storageMode: 'localStorage', maxAge: 10000, deleteOnExpire: 'aggressive' });
+        CacheFactory.createCache('myTeamsCache', { storageMode: 'localStorage' });
+        CacheFactory.createCache('staticCache', { storageMode: 'localStorage' });
     })
 })
 
@@ -86,6 +91,15 @@ angular.module("eliteApp", ['ionic'])
             views: {
                 'mainContent': {
                     templateUrl: "app/locations/locations.html"
+                }
+            }
+        })
+
+        .state('app.location-map', {
+            url: "/location-map/:id",
+            views: {
+                'mainContent': {
+                    templateUrl: "app/locations/location-map.html"
                 }
             }
         })
