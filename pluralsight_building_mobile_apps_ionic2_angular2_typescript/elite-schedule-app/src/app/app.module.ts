@@ -2,14 +2,16 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { GamePage, MyTeamsPage, TeamDetailPage, TeamsPage, TournamentsPage } from '../pages/pages';
+import { GamePage, MyTeamsPage, StandingsPage, TeamDetailPage, TeamHomePage, TeamsPage, TournamentsPage } from '../pages/pages';
 
 @NgModule({
   declarations: [
     MyApp,
     GamePage,
     MyTeamsPage,
+    StandingsPage,
     TeamDetailPage,
+    TeamHomePage,
     TeamsPage,
     TournamentsPage,
   ],
@@ -21,7 +23,9 @@ import { GamePage, MyTeamsPage, TeamDetailPage, TeamsPage, TournamentsPage } fro
     MyApp,
     GamePage,
     MyTeamsPage,
+    StandingsPage,
     TeamDetailPage,
+    TeamHomePage,
     TeamsPage,
     TournamentsPage,
   ],
