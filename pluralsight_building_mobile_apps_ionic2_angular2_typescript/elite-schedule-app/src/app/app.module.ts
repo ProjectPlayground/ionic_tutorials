@@ -2,12 +2,13 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { MyTeamsPage } from '../pages/pages';
+import { MyTeamsPage, TournamentsPage } from '../pages/pages';
 
 @NgModule({
   declarations: [
     MyApp,
-    MyTeamsPage
+    MyTeamsPage,
+    TournamentsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -15,7 +16,8 @@ import { MyTeamsPage } from '../pages/pages';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    MyTeamsPage
+    MyTeamsPage,
+    TournamentsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
