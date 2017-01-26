@@ -10,7 +10,7 @@ import { MyTeamsPage } from '../pages/pages';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = MyTeamsPage
+  rootPage: any = MyTeamsPage;
   
   constructor(public platform: Platform) {
     this.initializeApp();

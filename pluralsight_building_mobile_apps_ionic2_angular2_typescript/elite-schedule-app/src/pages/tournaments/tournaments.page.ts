@@ -9,4 +9,7 @@ export class TournamentsPage {
   constructor(private nav: NavController) {
   }
 
+  navigate() {
+    this.nav.pop();
+  }
 }
