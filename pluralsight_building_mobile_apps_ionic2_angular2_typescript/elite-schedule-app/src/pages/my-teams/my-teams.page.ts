@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
 
 @Component({
-    templateUrl: 'my-teams.page.html'
+  templateUrl: 'my-teams.page.html'
 })
 export class MyTeamsPage {
-    constructor() {
-    }
+
+  constructor(private nav: NavController) {
+  }
+
 }
