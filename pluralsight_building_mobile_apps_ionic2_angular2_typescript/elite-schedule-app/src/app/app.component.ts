@@ -1,8 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native'
+import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { MyTeamsPage, TournamentsPage } from '../pages/pages';
+import { EliteApi } from './shared/shared';
 
 @Component({
   templateUrl: 'app.html'
@@ -12,7 +13,7 @@ export class MyApp {
 
   rootPage: any = MyTeamsPage;
   
-  constructor(public platform: Platform) {
+  constructor(public platform: Platform, public eliteApi: EliteApi) {
     this.initializeApp();
   }
   
