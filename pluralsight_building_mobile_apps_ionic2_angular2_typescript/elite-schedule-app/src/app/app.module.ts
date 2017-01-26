@@ -8,7 +8,7 @@ import { Page2 } from '../pages/page2/page2';
   declarations: [
     MyApp,
     Page1,
-    Page2
+    Page2,
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -17,7 +17,7 @@ import { Page2 } from '../pages/page2/page2';
   entryComponents: [
     MyApp,
     Page1,
-    Page2
+    Page2,
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
