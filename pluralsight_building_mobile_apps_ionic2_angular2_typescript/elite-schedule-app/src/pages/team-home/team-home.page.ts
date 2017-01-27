@@ -8,7 +8,7 @@ import { MyTeamsPage, StandingsPage, TeamDetailPage } from '../pages';
 })
 export class TeamHomePage {
 
-  team: any;
+  team: any = {};
   teamDetailTab = TeamDetailPage;
   standingsTab = StandingsPage;
 
@@ -17,7 +17,7 @@ export class TeamHomePage {
   }
 
   goHome() {
-    //this.nav.push(MyTeamsPage);
     this.nav.popToRoot();
   }
+
 }

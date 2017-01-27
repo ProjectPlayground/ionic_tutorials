@@ -11,7 +11,9 @@ export class TeamsPage {
 
   teams = [];
 
-  constructor(private nav: NavController, private navParams: NavParams, private eliteApi: EliteApi) {
+  constructor(private nav: NavController,
+              private navParams: NavParams,
+              private eliteApi: EliteApi) {
   }
 
   ionViewDidLoad() {
