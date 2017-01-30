@@ -124,4 +124,11 @@ export class TeamDetailPage {
     }
   }
 
+  refreshAll(refresher) {
+    this.eliteApi.refreshCurrentTourney().subscribe(() => {
+      refresher.complete();
+      this.ionViewDidLoad();
+    });
+  }
+
 }
