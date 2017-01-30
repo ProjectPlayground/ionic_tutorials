@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { MyTeamsPage, StandingsPage, TeamDetailPage } from '../pages';
+import { StandingsPage, TeamDetailPage } from '../pages';
 
 @Component({
   templateUrl: 'team-home.page.html'
