@@ -1,2 +1,2 @@
-export * from './home/home';
-export * from './vibration/vibration';
+export * from './home/home.page';
+export * from './vibration/vibration.page';

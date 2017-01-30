@@ -1,13 +1,13 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { Home, Vibration } from '../pages/pages';
+import { HomePage, VibrationPage } from '../pages/pages';
 
 @NgModule({
   declarations: [
     MyApp,
-    Home,
-    Vibration,
+    HomePage,
+    VibrationPage,
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -15,8 +15,8 @@ import { Home, Vibration } from '../pages/pages';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    Home,
-    Vibration,
+    HomePage,
+    VibrationPage,
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { Home, Vibration } from '../pages/pages';
+import { HomePage, VibrationPage } from '../pages/pages';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { Home, Vibration } from '../pages/pages';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = Home;
+  rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -20,8 +20,8 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: Home },
-      { title: 'Vibration', component: Vibration },
+      { title: 'Home', component: HomePage },
+      { title: 'Vibration', component: VibrationPage },
     ];
 
   }
