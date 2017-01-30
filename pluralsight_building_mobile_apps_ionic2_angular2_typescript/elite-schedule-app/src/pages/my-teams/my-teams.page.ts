@@ -36,4 +36,5 @@ export class MyTeamsPage {
   ionViewDidEnter() {
     this.favorites = this.userSettings.getAllFavorites();
   }
+
 }

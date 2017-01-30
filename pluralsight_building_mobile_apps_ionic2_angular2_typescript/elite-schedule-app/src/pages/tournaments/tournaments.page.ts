@@ -32,16 +32,4 @@ export class TournamentsPage {
     });
   }
 
-  ionViewWillEnter() {  
-    console.log('## lifecycle ## ionViewWillEnter');  
-  }
-
-  ionViewWillLeave() {  
-    console.log('## lifecycle ## ionViewWillLeave');  
-  }
-
-  ionViewDidUnload() {
-    console.log('## lifecycle ## ionViewDidUnload');  
-  }
-
 }
