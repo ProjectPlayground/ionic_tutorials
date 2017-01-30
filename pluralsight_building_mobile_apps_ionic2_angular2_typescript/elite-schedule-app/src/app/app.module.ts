@@ -4,13 +4,14 @@ import { Storage } from '@ionic/storage';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { MyApp } from './app.component';
 
-import { GamePage, MyTeamsPage, StandingsPage, TeamDetailPage, TeamHomePage, TeamsPage, TournamentsPage } from '../pages/pages';
+import { GamePage, MapPage, MyTeamsPage, StandingsPage, TeamDetailPage, TeamHomePage, TeamsPage, TournamentsPage } from '../pages/pages';
 import { EliteApi, UserSettings } from './shared/shared';
 
 @NgModule({
   declarations: [
     MyApp,
     GamePage,
+    MapPage,
     MyTeamsPage,
     StandingsPage,
     TeamDetailPage,
@@ -26,6 +27,7 @@ import { EliteApi, UserSettings } from './shared/shared';
   entryComponents: [
     MyApp,
     GamePage,
+    MapPage,
     MyTeamsPage,
     StandingsPage,
     TeamDetailPage,
