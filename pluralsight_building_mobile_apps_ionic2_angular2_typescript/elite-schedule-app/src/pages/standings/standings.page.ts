@@ -11,6 +11,7 @@ import { EliteApi } from '../../app/shared/shared';
 export class StandingsPage {
 
   allStandings: any[];
+  divisionFilter = 'division';
   standings: any[];
   team: any = {};
 
@@ -24,12 +25,24 @@ export class StandingsPage {
     this.team = this.navParams.data;
     let tourneyData = this.eliteApi.getCurrentTourney();
     this.standings = tourneyData.standings;
+    this.allStandings = tourneyData.standings;
 
-    this.allStandings = 
-      _.chain(this.standings)
-       .groupBy('division')
-       .toPairs('')
-       .map(item => _.zipObject(['divisionName', 'divisionStandings'], item))
-       .value();
+    this.filterDivision();
   }
+
+  getHeader(record, recordIndex, records) {
+    if (recordIndex === 0 || record.division !== records[recordIndex-1].division) {
+      return record.division;
+    }
+    return null;
+  }
+
+  filterDivision() {
+    if (this.divisionFilter === 'all' ) {
+      this.standings = this.allStandings;
+    } else {
+      this.standings = _.filter(this.allStandings, s => s.division === this.team.division);
+    }
+  }
+
 }
