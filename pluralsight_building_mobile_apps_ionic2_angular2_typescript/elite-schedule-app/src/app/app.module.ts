@@ -3,7 +3,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { GamePage, MyTeamsPage, StandingsPage, TeamDetailPage, TeamHomePage, TeamsPage, TournamentsPage } from '../pages/pages';
-import { EliteApi } from './shared/shared';
+import { EliteApi, UserSettings } from './shared/shared';
 
 @NgModule({
   declarations: [
@@ -33,6 +33,7 @@ import { EliteApi } from './shared/shared';
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     EliteApi,
+    UserSettings,
   ]
 })
 export class AppModule {}

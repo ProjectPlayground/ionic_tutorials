@@ -5,7 +5,7 @@ import * as _ from 'lodash';
 import * as moment from 'moment';
 
 import { GamePage } from '../pages';
-import { EliteApi } from '../../app/shared/shared';
+import { EliteApi, UserSettings } from '../../app/shared/shared';
 
 @Component({
   templateUrl: 'team-detail.page.html'
@@ -25,7 +25,8 @@ export class TeamDetailPage {
     private eliteApi: EliteApi,
     private nav: NavController,
     private navParams: NavParams,
-    private toastController: ToastController) {
+    private toastController: ToastController,
+    private userSettings: UserSettings) {
   }
 
   ionViewDidLoad() {
@@ -52,6 +53,7 @@ export class TeamDetailPage {
 
     this.allGames = this.games;
     this.teamStanding = _.find(this.tourneyData.standings, { 'teamId': this.team.id });
+    this.userSettings.isFavoriteTeam(this.team.id).then(value => this.isFollowing = value);
   }
 
   getScoreDisplay(isTeam1, team1Score, team2Score) {
@@ -96,7 +98,7 @@ export class TeamDetailPage {
             text: 'Yes',
             handler: () => {
               this.isFollowing = false;
-              // TODO: persist data
+              this.userSettings.unfavoriteTeam(this.team);
 
               let toast = this.toastController.create({
                 message: 'You have unfollowed this team.',
@@ -114,7 +116,11 @@ export class TeamDetailPage {
       confirm.present();      
     } else {
       this.isFollowing = true;
-      // TODO: persist data
+      this.userSettings.favoriteTeam(
+        this.team,
+        this.tourneyData.tournament.id,
+        this.tourneyData.tournament.name
+      );
     }
   }
 
