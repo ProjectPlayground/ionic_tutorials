@@ -1,5 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 import { MyApp } from './app.component';
 
 import { GamePage, MyTeamsPage, StandingsPage, TeamDetailPage, TeamHomePage, TeamsPage, TournamentsPage } from '../pages/pages';
@@ -33,6 +34,7 @@ import { EliteApi, UserSettings } from './shared/shared';
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     EliteApi,
+    Storage,
     UserSettings,
   ]
 })
