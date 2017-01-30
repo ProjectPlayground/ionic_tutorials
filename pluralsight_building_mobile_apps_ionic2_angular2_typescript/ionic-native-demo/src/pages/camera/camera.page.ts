@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  templateUrl: 'home.page.html',
+  templateUrl: 'camera.page.html',
 })
-export class HomePage {
+export class CameraPage {
 
 }

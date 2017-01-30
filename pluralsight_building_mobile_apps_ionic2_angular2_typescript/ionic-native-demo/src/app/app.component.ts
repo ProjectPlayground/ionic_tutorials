@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { HomePage, VibrationPage } from '../pages/pages';
+import { BarcodeScannerPage, CameraPage, DeviceMotionPage, GeolocationPage, HomePage, LocalNotificationsPage, VibrationPage } from '../pages/pages';
 
 
 @Component({
@@ -22,6 +22,11 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Vibration', component: VibrationPage },
+      { title: 'Geolocation', component: GeolocationPage },
+      { title: 'Camera', component: CameraPage },
+      { title: 'Barcode Scanner', component: BarcodeScannerPage },
+      { title: 'Device Motion', component: DeviceMotionPage },
+      { title: 'Local Notifications', component: LocalNotificationsPage },
     ];
 
   }

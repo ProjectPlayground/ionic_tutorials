@@ -1,16 +1,11 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
-
 import { Vibration } from 'ionic-native';
 
 @Component({
   templateUrl: 'vibration.page.html',
 })
 export class VibrationPage {
-
-  constructor(public navCtrl: NavController) {
-  }
 
   vibrate() {
     Vibration.vibrate(2000);

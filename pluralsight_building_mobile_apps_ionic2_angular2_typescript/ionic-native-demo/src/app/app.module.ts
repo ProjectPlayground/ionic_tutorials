@@ -1,13 +1,20 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { HomePage, VibrationPage } from '../pages/pages';
+
+import { BarcodeScannerPage, CameraPage, DeviceMotionPage, GeolocationPage, HomePage, LocalNotificationsPage, VibrationPage } from '../pages/pages';
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     VibrationPage,
+    GeolocationPage,
+    CameraPage,
+    BarcodeScannerPage,
+    DeviceMotionPage,
+    LocalNotificationsPage,
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -17,6 +24,11 @@ import { HomePage, VibrationPage } from '../pages/pages';
     MyApp,
     HomePage,
     VibrationPage,
+    GeolocationPage,
+    CameraPage,
+    BarcodeScannerPage,
+    DeviceMotionPage,
+    LocalNotificationsPage,
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
