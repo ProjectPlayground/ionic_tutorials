@@ -8,4 +8,11 @@
 </ion-header>
 
 <ion-content padding>
+
+  <button ion-button full primary (click)="takePicture()">Take Picture</button>
+
+  <ion-card *ngIf="imgSrc">
+    <img [src]="imgSrc">
+  </ion-card>
+
 </ion-content>
