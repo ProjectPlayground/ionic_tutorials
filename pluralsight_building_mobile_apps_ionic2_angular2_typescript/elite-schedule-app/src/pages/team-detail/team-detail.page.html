@@ -15,11 +15,11 @@
           <p>Coach: {{ team.coach }}</p>
         </ion-col>
         <ion-col width-50 text-right>
-          <button ion-button outline (click)="toggleFollow()" *ngIf="!isFollowing">
+          <button ion-button icon-left outline (click)="toggleFollow()" *ngIf="!isFollowing">
             <ion-icon name="star"></ion-icon>
             Add Favorite
           </button>
-          <button ion-button (click)="toggleFollow()" *ngIf="isFollowing">
+          <button ion-button icon-only (click)="toggleFollow()" *ngIf="isFollowing">
             <ion-icon name="star"></ion-icon>
           </button>
         </ion-col>
@@ -33,11 +33,12 @@
       </ion-item>
     </ion-card-content>
   </ion-card>
+
   <ion-list>
     <ion-item *ngFor="let game of games" (click)="gameClicked($event, game)">
       <ion-row>
         <ion-col width-20>
-          <p>{{ game.time | date:'dd/MM/yy' }}</p>
+          <p>{{ game.time | date:'dd/MM/yyyy' }}</p>
           <p>{{ game.time | date:'HH:mm' }}</p>
         </ion-col>
         <ion-col width-60>

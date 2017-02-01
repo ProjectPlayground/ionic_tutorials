@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
 import { NavParams } from 'ionic-angular';
 
-import { EliteApi } from '../../app/shared/shared';
+import { EliteApi } from '../../shared/shared';
 
 declare var window: any;
 
 @Component({
   selector: 'map-page',
-  templateUrl: 'map.page.html'
+  templateUrl: 'map.page.html',
 })
 export class MapPage {
   map: any = {};
 
-  constructor(private eliteApi: EliteApi, private navParams: NavParams) {
+  constructor(
+      private eliteApi: EliteApi,
+      private navParams: NavParams) {
   }
 
   ionViewDidLoad() {

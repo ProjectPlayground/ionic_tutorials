@@ -1,7 +1,7 @@
 {
-  "name": "ionic-hello-world",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "name": "elite-schedule-app",
+  "author": "Henrique Santos",
+  "homepage": "https://github.com/s4nt0shenrique/ionic_tutorials/tree/master/pluralsight_building_mobile_apps_ionic2_angular2_typescript/elite-schedule-app",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -43,5 +43,5 @@
     "cordova-plugin-splashscreen"
   ],
   "cordovaPlatforms": [],
-  "description": "elite-schedule-app: An Ionic project"
+  "description": "elite-schedule-app: Elite Schedule Ionic 2 Application"
 }

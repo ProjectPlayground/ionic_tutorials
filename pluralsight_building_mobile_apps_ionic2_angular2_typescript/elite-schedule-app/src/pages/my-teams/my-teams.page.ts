@@ -2,21 +2,20 @@ import { Component } from '@angular/core';
 import { LoadingController, NavController } from 'ionic-angular';
 
 import { TeamHomePage, TournamentsPage } from '../pages';
-import { EliteApi, UserSettings } from '../../app/shared/shared';
+import { EliteApi, UserSettings } from '../../shared/shared';
 
 @Component({
   selector: 'my-teams-page',
   templateUrl: 'my-teams.page.html',
 })
 export class MyTeamsPage {
-
-  favorites: any[];
+  favorites = [];
 
   constructor(
-    private eliteApi: EliteApi,
-    private loadingController: LoadingController,
-    private nav: NavController,
-    private userSettings: UserSettings) {
+      private eliteApi: EliteApi,
+      private loadingController: LoadingController,
+      private nav: NavController,
+      private userSettings: UserSettings) {
   }
 
   favoriteTapped($event, favorite) {

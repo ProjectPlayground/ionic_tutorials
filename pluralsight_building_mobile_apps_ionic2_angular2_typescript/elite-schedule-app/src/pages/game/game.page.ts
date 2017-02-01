@@ -2,21 +2,21 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { MapPage, TeamHomePage } from '../pages';
-import { EliteApi } from '../../app/shared/shared';
+import { EliteApi } from '../../shared/shared';
 
 declare var window: any;
 
 @Component({
   selector: 'game-page',
-  templateUrl: 'game.page.html'
+  templateUrl: 'game.page.html',
 })
 export class GamePage {
   game: any = {};
 
   constructor(
-    private nav: NavController,
-    private navParams: NavParams,
-    private eliteApi: EliteApi) {
+      private nav: NavController,
+      private navParams: NavParams,
+      private eliteApi: EliteApi) {
   }
 
   ionViewDidLoad() {

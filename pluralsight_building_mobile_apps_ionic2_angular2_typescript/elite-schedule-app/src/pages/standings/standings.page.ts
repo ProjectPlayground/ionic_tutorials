@@ -1,24 +1,22 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
 import * as _ from 'lodash';
 
-import { EliteApi } from '../../app/shared/shared';
+import { EliteApi } from '../../shared/shared';
 
 @Component({
-  templateUrl: 'standings.page.html'
+  templateUrl: 'standings.page.html',
 })
 export class StandingsPage {
-
   allStandings: any[];
   divisionFilter = 'division';
   standings: any[];
-  team: any = {};
+  team: any;
 
   constructor(
-    private nav: NavController,
-    private navParams: NavParams,
-    private eliteApi: EliteApi) {
+      private nav: NavController,
+      private navParams: NavParams,
+      private eliteApi: EliteApi) {
   }
 
   ionViewDidLoad() {

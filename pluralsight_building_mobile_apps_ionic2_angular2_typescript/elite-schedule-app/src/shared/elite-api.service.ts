@@ -6,7 +6,6 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class EliteApi {
-
     private baseUrl = 'https://elite-schedule-app-i2-281d6.firebaseio.com';
     currentTourney: any = {};
     private tourneyData = {}

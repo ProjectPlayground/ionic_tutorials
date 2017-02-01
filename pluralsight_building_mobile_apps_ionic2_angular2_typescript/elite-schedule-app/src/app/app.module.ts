@@ -6,7 +6,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 import { MyApp } from './app.component';
 
 import { GamePage, MapPage, MyTeamsPage, StandingsPage, TeamDetailPage, TeamHomePage, TeamsPage, TournamentsPage } from '../pages/pages';
-import { EliteApi, UserSettings } from './shared/shared';
+import { EliteApi, UserSettings } from '../shared/shared';
 
 @NgModule({
   declarations: [

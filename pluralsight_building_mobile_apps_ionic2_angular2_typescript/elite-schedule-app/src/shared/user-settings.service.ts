@@ -10,7 +10,7 @@ const win: any = window;
 export class UserSettings {
     private sql: SqlStorage;
 
-    constructor(public events: Events, public storage: Storage) {
+    constructor(private events: Events, private storage: Storage) {
         if (win.sqlitePlugin) {
             this.sql = new SqlStorage();
         } else {

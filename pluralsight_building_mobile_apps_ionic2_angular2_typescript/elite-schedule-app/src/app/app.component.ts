@@ -3,10 +3,10 @@ import { Events, LoadingController, Nav, Platform } from 'ionic-angular';
 import { Splashscreen, StatusBar } from 'ionic-native';
 
 import { MyTeamsPage, TeamHomePage, TournamentsPage } from '../pages/pages';
-import { EliteApi, UserSettings } from './shared/shared';
+import { EliteApi, UserSettings } from '../shared/shared';
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
@@ -15,11 +15,11 @@ export class MyApp {
   rootPage: any;
   
   constructor(
-    public eliteApi: EliteApi,
-    public events: Events,
-    public loadingController: LoadingController,
-    public platform: Platform,
-    public userSettings: UserSettings) {
+      private eliteApi: EliteApi,
+      private events: Events,
+      private loadingController: LoadingController,
+      private platform: Platform,
+      private userSettings: UserSettings) {
     this.initializeApp();
   }
  
@@ -43,7 +43,7 @@ export class MyApp {
   }
   
   goHome() {
-    this.nav.popToRoot(MyTeamsPage);
+    this.nav.push(MyTeamsPage);
   }
 
   goToTeam(favorite) {

@@ -3,23 +3,22 @@ import { LoadingController, NavController, NavParams } from 'ionic-angular';
 import * as _ from 'lodash';
 
 import { TeamHomePage } from '../pages';
-import { EliteApi } from '../../app/shared/shared';
+import { EliteApi } from '../../shared/shared';
 
 @Component({
-  templateUrl: 'teams.page.html'
+  templateUrl: 'teams.page.html',
 })
 export class TeamsPage {
-
   private allTeams: any; 
   private allTeamDivisions: any;
   teams = [];
-  queryText: string = "";
+  queryText: string = '';
 
   constructor(
-      private loadingController: LoadingController,
-      private nav: NavController,
-      private navParams: NavParams,
-      private eliteApi: EliteApi) {
+        private loadingController: LoadingController,
+        private nav: NavController,
+        private navParams: NavParams,
+        private eliteApi: EliteApi) {
   }
 
   ionViewDidLoad() {
@@ -30,7 +29,6 @@ export class TeamsPage {
     });
 
     loader.present().then(() => {
-
       this.eliteApi.getTournamentData(selectedTourney.id).subscribe(data => {
         this.allTeams = data.teams;
         this.allTeamDivisions = 

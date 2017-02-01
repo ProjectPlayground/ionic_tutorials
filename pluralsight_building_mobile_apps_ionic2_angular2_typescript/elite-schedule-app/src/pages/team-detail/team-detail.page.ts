@@ -5,10 +5,10 @@ import _ from 'lodash';
 import moment from 'moment';
 
 import { GamePage } from '../pages';
-import { EliteApi, UserSettings } from '../../app/shared/shared';
+import { EliteApi, UserSettings } from '../../shared/shared';
 
 @Component({
-  templateUrl: 'team-detail.page.html'
+  templateUrl: 'team-detail.page.html',
 })
 export class TeamDetailPage {
   allGames: any[];
@@ -21,12 +21,12 @@ export class TeamDetailPage {
   useDateFilter = false;
 
   constructor(
-    private alertController: AlertController,
-    private eliteApi: EliteApi,
-    private nav: NavController,
-    private navParams: NavParams,
-    private toastController: ToastController,
-    private userSettings: UserSettings) {
+      private alertController: AlertController,
+      private eliteApi: EliteApi,
+      private nav: NavController,
+      private navParams: NavParams,
+      private toastController: ToastController,
+      private userSettings: UserSettings) {
   }
 
   ionViewDidLoad() {
@@ -40,14 +40,14 @@ export class TeamDetailPage {
                     let opponentName = isTeam1 ? g.team2 : g.team1;
                     let scoreDisplay = this.getScoreDisplay(isTeam1, g.team1Score, g.team2Score);
                     return {
-                      gameId: g.id,
-                      opponent: opponentName,
-                      time: Date.parse(g.time),
-                      location: g.location,
-                      locationUrl: g.locationUrl,
-                      scoreDisplay: scoreDisplay,
-                      homeAway: (isTeam1 ? "vs." : "at"),
-                    }
+                        gameId: g.id,
+                        opponent: opponentName,
+                        time: Date.parse(g.time),
+                        location: g.location,
+                        locationUrl: g.locationUrl,
+                        scoreDisplay: scoreDisplay,
+                        homeAway: (isTeam1 ? "vs." : "at"),
+                    };
                   })
                   .value();
 
@@ -91,7 +91,7 @@ export class TeamDetailPage {
   toggleFollow() {
     if (this.isFollowing) {
       let confirm = this.alertController.create({
-        title: 'Unfollow ?',
+        title: 'Unfollow?',
         message: 'Are you sure you want to unfollow?',
         buttons: [
           {
@@ -119,8 +119,7 @@ export class TeamDetailPage {
       this.userSettings.favoriteTeam(
         this.team,
         this.tourneyData.tournament.id,
-        this.tourneyData.tournament.name
-      );
+        this.tourneyData.tournament.name);
     }
   }
 
