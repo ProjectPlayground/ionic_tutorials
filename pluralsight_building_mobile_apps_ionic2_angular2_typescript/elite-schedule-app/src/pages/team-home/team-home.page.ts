@@ -7,7 +7,6 @@ import { StandingsPage, TeamDetailPage } from '../pages';
   templateUrl: 'team-home.page.html'
 })
 export class TeamHomePage {
-
   team: any = {};
   teamDetailTab = TeamDetailPage;
   standingsTab = StandingsPage;

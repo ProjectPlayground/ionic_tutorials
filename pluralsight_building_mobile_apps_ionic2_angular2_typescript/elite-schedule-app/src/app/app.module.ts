@@ -1,5 +1,6 @@
-import { NgModule, ErrorHandler } from '@angular/core';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { IonicApp, IonicModule } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { MyApp } from './app.component';
@@ -21,6 +22,7 @@ import { EliteApi, UserSettings } from './shared/shared';
   ],
   imports: [
     IonicModule.forRoot(MyApp),
+    HttpModule,
     AgmCoreModule.forRoot({ apiKey: 'AIzaSyBBx74xkaDJi1mHLRGpqGOdVzajBEeiK4k' }),
   ],
   bootstrap: [IonicApp],
@@ -36,7 +38,6 @@ import { EliteApi, UserSettings } from './shared/shared';
     TournamentsPage,
   ],
   providers: [
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
     EliteApi,
     Storage,
     UserSettings,

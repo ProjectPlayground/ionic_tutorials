@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { LoadingController, NavController } from 'ionic-angular';
 
 import { TeamsPage } from '../pages';
-
 import { EliteApi } from '../../app/shared/shared';
 
 @Component({

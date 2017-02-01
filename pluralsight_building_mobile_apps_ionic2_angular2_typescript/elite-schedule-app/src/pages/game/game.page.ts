@@ -11,12 +11,12 @@ declare var window: any;
   templateUrl: 'game.page.html'
 })
 export class GamePage {
-
   game: any = {};
 
-  constructor(private nav: NavController,
-              private navParams: NavParams,
-              private eliteApi: EliteApi) {
+  constructor(
+    private nav: NavController,
+    private navParams: NavParams,
+    private eliteApi: EliteApi) {
   }
 
   ionViewDidLoad() {
@@ -41,7 +41,7 @@ export class GamePage {
   }
 
   isWinner(score1, score2) {
-    return Number(score1) > Number(score2);
+    return Number(score1) > Number(score2) ? 'secondary' : '';
   }
 
 }

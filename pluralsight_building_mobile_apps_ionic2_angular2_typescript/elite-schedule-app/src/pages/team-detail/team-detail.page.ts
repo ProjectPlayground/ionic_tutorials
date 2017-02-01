@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { AlertController, NavController, NavParams, ToastController } from 'ionic-angular';
 
-import * as _ from 'lodash';
-import * as moment from 'moment';
+import _ from 'lodash';
+import moment from 'moment';
 
 import { GamePage } from '../pages';
 import { EliteApi, UserSettings } from '../../app/shared/shared';

@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { Events, LoadingController, Nav, Platform } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
+import { Splashscreen, StatusBar } from 'ionic-native';
 
 import { MyTeamsPage, TeamHomePage, TournamentsPage } from '../pages/pages';
 import { EliteApi, UserSettings } from './shared/shared';
@@ -12,14 +12,14 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   favoriteTeams: any[];
-  rootPage: any = MyTeamsPage;
+  rootPage: any;
   
   constructor(
-    private eliteApi: EliteApi,
-    private events: Events,
-    private loadingController: LoadingController,
+    public eliteApi: EliteApi,
+    public events: Events,
+    public loadingController: LoadingController,
     public platform: Platform,
-    private userSettings: UserSettings) {
+    public userSettings: UserSettings) {
     this.initializeApp();
   }
  
@@ -29,8 +29,12 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
-      this.refreshFavorites();
-      this.events.subscribe('favorites:changed', () => this.refreshFavorites());
+
+      this.userSettings.initStorage().then(() => {
+        this.rootPage = MyTeamsPage;
+        this.refreshFavorites();
+        this.events.subscribe('favorites:changed', () => this.refreshFavorites());
+      });
     });
   }
 
@@ -39,7 +43,7 @@ export class MyApp {
   }
   
   goHome() {
-    this.nav.push(MyTeamsPage);
+    this.nav.popToRoot(MyTeamsPage);
   }
 
   goToTeam(favorite) {
@@ -54,4 +58,5 @@ export class MyApp {
   goToTournaments() {
     this.nav.push(TournamentsPage);
   }
+
 }

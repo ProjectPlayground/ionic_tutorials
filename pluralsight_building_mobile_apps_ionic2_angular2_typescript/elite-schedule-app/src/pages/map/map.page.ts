@@ -10,7 +10,6 @@ declare var window: any;
   templateUrl: 'map.page.html'
 })
 export class MapPage {
-
   map: any = {};
 
   constructor(private eliteApi: EliteApi, private navParams: NavParams) {

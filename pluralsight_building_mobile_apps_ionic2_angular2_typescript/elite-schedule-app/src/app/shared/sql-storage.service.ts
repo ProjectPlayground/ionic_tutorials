@@ -5,8 +5,6 @@ import { SQLite } from 'ionic-native';
 export class SqlStorage {
     public db: SQLite;
 
-    constructor() { }
-
     getAll(){
         return this.db.executeSql('SELECT key, value FROM kv', []).then(data => {
             let results = [];
@@ -48,4 +46,5 @@ export class SqlStorage {
             });
         });
     }
+
 }

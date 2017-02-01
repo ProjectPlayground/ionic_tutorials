@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { LoadingController, NavController, NavParams } from 'ionic-angular';
-
 import * as _ from 'lodash';
 
 import { TeamHomePage } from '../pages';

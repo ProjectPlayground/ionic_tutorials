@@ -10,7 +10,7 @@ const win: any = window;
 export class UserSettings {
     private sql: SqlStorage;
 
-    constructor(private events: Events, private storage: Storage) {
+    constructor(public events: Events, public storage: Storage) {
         if (win.sqlitePlugin) {
             this.sql = new SqlStorage();
         } else {
@@ -38,7 +38,7 @@ export class UserSettings {
     unfavoriteTeam(team) {
         if (this.sql) {
             this.sql.remove(team.id.toString()).then(data => {
-                this.events.publish('favorite:changed');
+                this.events.publish('favorites:changed');
             });
         } else {
             return new Promise(resolve => {
