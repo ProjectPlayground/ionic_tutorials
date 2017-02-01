@@ -34,7 +34,7 @@ export class MyTeamsPage {
   }
 
   ionViewDidEnter() {
-    this.favorites = this.userSettings.getAllFavorites();
+    this.userSettings.getAllFavorites().then(favs => { this.favorites = favs });
   }
 
 }

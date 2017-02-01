@@ -35,7 +35,7 @@ export class MyApp {
   }
 
   refreshFavorites() {
-    this.favoriteTeams = this.userSettings.getAllFavorites();
+    this.userSettings.getAllFavorites().then(favs => this.favoriteTeams = favs);
   }
   
   goHome() {
